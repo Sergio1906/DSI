@@ -1,0 +1,80 @@
+header{
+  color: green;
+  background-color: #dddddd;
+  height: 100px;
+  text-align: center;
+
+}
+
+header:hover{
+  background-color: red;
+}
+
+body{
+  width: 770px;
+  position: static;
+  font-style: normal;
+  font: arial;
+  font-size: 1.5em;
+}
+
+p{
+  margin-top: 0.5em;
+}
+
+nav{
+  padding: 0.3em;
+  margin-bottom: 0.7em;
+}
+
+a:hover{
+  color:red;
+}
+
+a:visited{
+  font: verdana;
+  color: blue;
+}
+
+table a{
+  color:green;
+}
+
+.texto{
+  float: left;
+  background-image: url(http://posicionamientoenbuscadoreswebseo.es/wp-content/fondos-web-gratis.jpg);
+}
+
+.zona_central{
+  width: 330px;
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+
+
+
+}
+
+.zona_izq{
+  width: 200px;
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.zona_dcha{
+  width: 200px;
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+
+}
+
+footer{
+  position: relative;
+  clear: both;
+  text-align: center;
+
+
+
+}

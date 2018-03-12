@@ -1,4 +1,4 @@
-# DSI con git
+# DSI con gitt
 
 ## Componenetes:
 #### Juan Carlos González Pascolo

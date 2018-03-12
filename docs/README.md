@@ -35,3 +35,10 @@
 
 #### Ficheros cambios:
 ##### Index: añadir enlaces a pruebas css de prácticas
+
+### Versión 0.3:
+
+#### Detalles: Subida de ficheros a carpeta practicas_css
+
+#### Ficheros cambios:
+##### Practicas_css/JuanK_css + Practicas_css/Sergio_css + Practicas_css/Pedro_css

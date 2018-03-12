@@ -3,20 +3,37 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Página de inicio">
+        <meta name="keywords" content="Eventgram, eventos">
+        <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Eventgram</title>
     </head>
     
     <body>
         <div>
-            <ul>Menu
-                <li>Informacion inicial</li>
-                <li>Sobre nosotros</li>
-                <li><a href="formulario.html">Encuesta de satisfaccion</a></li>
-            </ul>
-            
-            <img src="icono.png" alt="Logo" height="100px" width="100px">
-            
-            <a href="log_in.html" title="Ir al log in">Log In</a>
+        <table border="1px" style="width:100%">
+            <tr>
+                <th>Menu</th>
+                <th>Log in</th>
+            </tr>
+            <tr>
+                <td>               
+                    <ul style="list-style-type:square">
+                        <li>Sobre nosotros</li>
+                        <li><a href="formulario.html">Encuesta de satisfaccion</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="log_in.html" title="Ir al log in">
+                        <img src="icono.png" alt="Logo" height="100px" width="100px">
+                        <label>Log in</label>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
         </div>
         
         <br><br>
@@ -39,20 +56,17 @@
             <label for="date_Ev">Fecha:</label>
             <input type="date">
             
-            <input type="button" onclick="find_events()" value="Buscar eventos!"> 
+            <input type="button"onclick="alert('¡Evento encontrado!\nPincha en su foto para más información.')" value="Buscar eventos!"> 
         </div>
         
         <br><br>
         
         <div>
             <div>
+                <a href="tomorrowland.html" title="Información de evento">
                 <img src="tmrland.jpg" alt="evento" height="50px" width="50px">
-                <h3>Tomorrowland</h3>
-                <p>Tipo: Musical</p>
-                <p>Fecha: 20/07/2018 - 22/07/2018</p>
-                <p>Descripcion: El evento musical numero uno en <strong>musica electronica</strong> al cual asisten miles de personas cada año
-                    para encontrarse con los DJs del top mundial
-                </p>
+                <label>Tomorrowland</label>
+                </a>
             </div>
         </div>
     </body>

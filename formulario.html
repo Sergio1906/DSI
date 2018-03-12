@@ -11,21 +11,52 @@
         <h2>Gracias a ti mejoraremos</h2>
         
         <form action="/encuestas/form.php" method="post">
-            ¿Con qué frecuencia sueles ir a eventos de cualquier tipo?:<br>
-            <input type="radio" name="frec" value="1" checked>Una vez al mes<br>
-            <input type="radio" name="frec" value="2">Entre 2 y 4 veces al mes<br>
-            <input type="radio" name="frec" value="4">Mas de 4 veces al mes<br>
+        	<fieldset>
+        		<legend>Datos personales:</legend>
+
+	        	<label>Elija su sexo:</label>
+				<select name="Sexo">
+					<option value="Masculino">Masculino</option>
+					<option value="Femenino">Femenino</option>
+					<option value="Otro">Otro</option>
+				</select>
+
+				<br><br>
+
+				<label>Edad:</label>
+				<input list="Edad" name="Edad">
+	  			<datalist id="Edad">
+	    			<option value="Menor a 15 años">
+	    			<option value="Entre 15 y 20 años">
+	    			<option value="Entre 20 y 50 años">
+	    			<option value="Mayor a 50 años">
+	  			</datalist>
+  			</fieldset>
+
+  			<br><br>
+  			
+  			<fieldset>
+	  			<legend>Datos estadísticos:</legend>
+
+	  			<label>¿Con qué frecuencia sueles ir a eventos de cualquier tipo?:</label><br>
+	            <input type="radio" name="frec" value="1" checked>Una vez al mes<br>
+	            <input type="radio" name="frec" value="2-4">Entre 2 y 4 veces al mes<br>
+	            <input type="radio" name="frec" value=">4">Mas de 4 veces al mes<br>
+
+	            <br><br>
+
+	            <label>¿Qué eventos sueles frecuentar más?</label><br>
+	            <input type="checkbox" name="typ_ev" value="musica">Musica<br>
+	            <input type="checkbox" name="typ_ev" value="teatro">Teatro<br>
+	            <input type="checkbox" name="typ_ev" value="cine">Cine<br>
+	            <input type="checkbox" name="typ_ev" value="pintura">Pintura<br>
+	            <input type="checkbox" name="typ_ev" value="deporte">Deporte<br>
+	  
+	            <label>Comentarios adicionales: </label><input type="textarea" name="fname"><br>
+  			</fieldset>
             
-            <br><br>
-            
-            ¿Qué eventos sueles frecuentar más?<br>
-            <input type="checkbox" name="typ_ev" value="musica">Musica<br>
-            <input type="checkbox" name="typ_ev" value="teatro">Teatro<br>
-            <input type="checkbox" name="typ_ev" value="cine">Cine<br>
-            <input type="checkbox" name="typ_ev" value="pintura">Pintura<br>
-            <input type="checkbox" name="typ_ev" value="deporte">Deporte<br>
-  
-            Comentarios adicionales: <input type="textarea" name="fname"><br>
+            <br>
+            <input type="submit" value="Enviar" onclick="alert('¡Su formulario se ha enviado!')">
         </form>
     </body>
 </html>

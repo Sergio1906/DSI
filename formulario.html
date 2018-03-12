@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eventgram</title>
+    </head>
+    
+    <body>
+        <h1>Bienvenidos al formulario de satisfaccion de Eventgram</h1>
+        <h2>Gracias a ti mejoraremos</h2>
+        
+        <form action="/encuestas/form.php" method="post">
+            ¿Con qué frecuencia sueles ir a eventos de cualquier tipo?:<br>
+            <input type="radio" name="frec" value="1" checked>Una vez al mes<br>
+            <input type="radio" name="frec" value="2">Entre 2 y 4 veces al mes<br>
+            <input type="radio" name="frec" value="4">Mas de 4 veces al mes<br>
+            
+            <br><br>
+            
+            ¿Qué eventos sueles frecuentar más?<br>
+            <input type="checkbox" name="typ_ev" value="musica">Musica<br>
+            <input type="checkbox" name="typ_ev" value="teatro">Teatro<br>
+            <input type="checkbox" name="typ_ev" value="cine">Cine<br>
+            <input type="checkbox" name="typ_ev" value="pintura">Pintura<br>
+            <input type="checkbox" name="typ_ev" value="deporte">Deporte<br>
+  
+            Comentarios adicionales: <input type="textarea" name="fname"><br>
+        </form>
+    </body>
+</html>

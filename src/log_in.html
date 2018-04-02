@@ -2,27 +2,98 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="design.css">
+        <script type="text/javascript" src="src/dropdown.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
+        
+        <script src="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth__es.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" />
+         
         <meta charset="UTF-8">
         <meta name="description" content="Página de inicio">
         <meta name="keywords" content="Eventgram, eventos">
         <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
 
         <title>Inicio Sesión</title>
     </head>
 
-    <h1>Inicia sesión en Eventgram</h1>
-    <div class="sesion">
-
-      <input type="text" id="Correo" placeholder="Correo"><br>
-      <input type="password" id="Password" placeholder="Password"><br>
-      <input type="submit" value="Iniciar sesión" onclick="alert('Entrando en Eventgram...')">
-      <input type="checkbox" value="Recodar tus datos"> Recordar mis datos
-      <a href="Reset_password.html" > ¿Olviste tu contraseña?</a><br><br>
-      <a href="./Sign_in.html"> ¿Nuevo en Eventgram?</a><br>
-
-
+<body>
+    <div class ="container">
+        <div class="row">
+            <div class="col s12">
+                <nav>
+                    <div id="color_flama" class="nav-wrapper" >
+                        <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px">
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><a href="formulario.html">Encuesta</a></li>
+                                <li><a href="./about_us.html">About us</a></li>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="Sign_in.html">Sing in</a></li>
+                            </ul>
+                        </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 offset-s3 center">
+                 <p class = "titulo_navbar" >Inicia sesión en Eventgram</p>
+            </div>
+        </div>
+        
+            
+        <div class = "row"  >
+            <div id = "datos" class="sesion">
+                <div class = "col s3 push-s3"id="main">
+                     <input type="text" id="Correo" placeholder="Correo"><br>
+                </div>
+                 <div class = "col s3 push-s3"id="main">
+                      <input type="password" id="Password" placeholder="Password"><br>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col s3 push-s5">
+                    <button id = "iniciar_sesion" class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesión
+                    <i class="material-icons right">send</i></button> <br>
+            </div>
+        </div>
     </div>
+        
+        <br>
+        
+        <footer class="page-footer container">
+            <div class="row">
+              <div class="col s10 offset-s1">
+                    <div class="col s4 push-s1">
+                        <a class="waves-effect waves-light btn-flat" href="Reset_password.html"> ¿Olviste tu contraseña?</a>
+                    </div>
+                    <div class="col s4 push-s3">
+                        <a class="waves-effect waves-light btn-flat" href="Sign_in.html"> ¿Nuevo en Eventgram?</a><br>
+                    </div>
+                </div>
+              </div>
+        </footer>
+        
+        
+        
+        <script>
+       
+        </script>
+        
+        
+        
+        
+</body>
+    
+    
 
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,8 +16,10 @@
         <meta name="keywords" content="Eventgram, eventos">
         <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <title>Eventgram</title>
+        
+        
     </head>
     
     <body>
@@ -25,81 +27,98 @@
             <div class="col s12">
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
-                        <img src="./res/icono.png" alt="Logo" class="left" height="75px" width="75px">
-                        <div class="col s5 push-s2">
+                        <img src="./res/icono.png" alt="Logotipo de Eventgram" class="left" height="75px" width="75px">
+                        <div class="col s4 push-s2">
                             <form>
                                 <div class="input-field">
                                     <input id="search" type="search" required>
                                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
+                                    <i class="material-icons">close</i></input>
                                 </div>
                             </form>
                         </div>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="src/formulario.html">Encuesta</a></li>
-                            <li><a href="src/about_us.html">About us</a></li>
                             <li><a href="src/log_in.html">Log in</a></li>
-                            <li><a href="src/Sign_in.html">Sing in</a></li>
+                            <li><a href="src/sign_in.html">Sign in</a></li>
+                            <li><a href="src/ayuda.html">Ayuda</a></li>
+                            <li><a href="src/nosotros.html">Nosotros</a></li>
+                            <li><a href="src/encuesta.html">Encuesta</a></li>
+
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="row">
+        
+        <div class="row center" aria-label="Contenido principal">
             <div class="col s10 offset-s1 z-depth-4" id="main">
                 <div>
                     <form>
-                    <div class="input-field col s3">
-                        <select multiple>
-                            <option value="" disabled selected>Tipo de Evento</option>
-                            <option value="1">Música</option>
-                            <option value="2">Teatro</option>
-                            <option value="3">Deporte</option>
-                            <option value="4">Cine</option>
-                            <option value="5">Pintura</option>
-                        </select>
-                  </div>
-                  
-                    <div class="input-field col s3">
-                         <input type="date" name="bdaymonth">
-                    </div>
-                  
-                <div class="input-field col s3">
-                        <select>
-                            <option value="" disabled selected>Estado</option>
-                            <option value="1">Proximamente</option>
-                            <option value="2">Disponible</option>
-                            <option value="3">Finalizado</option>
-                        </select>
-                  </div>
-                  
-                   <div class="input-field col s3">
-                      <input list="ciudad" name="ciudad" placeholder="Ciudad">
-                      <datalist id="ciudad">
-                        <option value="Londres">
-                        <option value="Madrid">
-                        <option value="New York">
-                        <option value="Barcelona">
-                        <option value="Sidney">
-                      </datalist>                  
-                    </div>
-                    
-                     <button id="filter" class="btn waves-effect waves-light " type="submit" name="action">Filtrar<i class="material-icons right">search</i>  </button>
+                        <div class="row center">
+                            <div id="type_div" class="input-field col s2 offset-s1 center div_desplegable" tabindex="-1" aria-expanded="false">
+                                <label>Tipo de evento</label>
+                                
+                                
+                                <select multiple id="type_select" >
+                                    <option class="type_option" tabindex="-1" value="MUSICA" aria-checked="false">Música</option>
+                                    <option class="type_option" tabindex="-1" value="TEATRO" aria-checked="false" onKeyUp="ch_check(event)">Teatro</option>
+                                    <option class="type_option" value="DEPORTE" aria-checked="false" onKeyUp="ch_check(event)">Deporte</option>
+                                    <option class="type_option" value="CINE" aria-checked="false" onKeyUp="ch_check(event)">Cine</option>
+                                    <option class="type_option" value="PINTURA" aria-checked="false" onKeyUp="ch_check(event)">Pintura</option>
+                                </select> 
+                                
+                            </div>
+                            
+                      
+                            
+                            <div class="input-field col s2 center">
+                                <input type="date" name="bdaymonth" title="Fecha del evento">
+                            </div>
+                            
+                      
+                            <div id="state_div" class="input-field col s2 div_desplegable center" aria-expanded="false">
+                                <label>Estado del evento</label>
+                                <select>
+                                    <option value="" disabled selected></option>
+                                    <option value="1">Proximamente</option>
+                                    <option value="2">Disponible</option>
+                                    <option value="3">Finalizado</option>
+                                </select>
+                            </div>
+                            
+                      
+                            <div class="input-field col s2 center">
+                                <input list="ciudad" name="ciudad" title="Ciudad del evento" placeholder="Ciudad">
+                                <datalist id="ciudad">
+                                    <option value="Londres">
+                                    <option value="Madrid">
+                                    <option value="New York">
+                                    <option value="Barcelona">
+                                    <option value="Sidney">
+                                  </datalist>                  
+                            </div>
+
+                            <div class="col s2 input-field center">
+                                <button id="filter" class="btn waves-effect waves-light " type="submit" name="action">Filtrar<i class="material-icons right">search</i></button>
+                            </div>
+                        </div>
                     </form>
                   
                 </div>
                 
-                <div class="carousel" style="width=700px;">
-                    <a class="carousel-item" href="src/tomorrowland.html"><img src="res/eventos/tmrland.jpg">  <p>Tomorrowland en Bélgica </p> </a>
-                    <a class="carousel-item" href="#two!"><img src="res/eventos/galery.jpg">  <p> Galería de arte en Madrid </p> </a>
-                    <a class="carousel-item" href="#two!"><img src="res/eventos/iberostar.jpg">  <p > Partido del Iberostar Tenerife </p> </a>
-                    <a class="carousel-item" href="#two!"><img src="res/eventos/ilove.jpg"> <p> Macrofiesta I Love Music en Tenerife </p> </a>
-                    <a class="carousel-item" href="#three!"><img src="res/eventos/circo.jpg"> <p> Circo del Sol en Madrid </p></a>
-                    <a class="carousel-item" href="#four!"><img src="res/eventos/badBunny.jpg"> <p> Concierto de BadBunny en Puerto Rico </p></a>
-                    <a class="carousel-item" href="#five!"><img src="res/eventos/opera.jpg"> <p> Ópera de Tenerife </p> </a>
-                 </div>
-                
+                <div class="carousel" aria-live="assertive">
+                    <form action="src/PHP/Crear_evento.php" method="GET" >
+                        <button type="submit" class="carousel-item"><img id="img1" alt="" src="res/eventos/tmrland.jpg" onclick="">  <p>Tomorrowland en Bélgica </p></button>
+                        <a class="carousel-item" href="#two!"><img alt="" src="res/eventos/galery.jpg">  <p> Galería de arte en Madrid </p> </a>
+                        <a class="carousel-item" href="#two!"><img alt="" src="res/eventos/iberostar.jpg">  <p > Partido del Iberostar Tenerife </p> </a>
+                        <a class="carousel-item" href="#two!"><img alt="" src="res/eventos/ilove.jpg"> <p> Macrofiesta I Love Music en Tenerife </p> </a>
+                        <a class="carousel-item" href="#three!"><img alt="" src="res/eventos/circo.jpg"> <p> Circo del Sol en Madrid </p></a>
+                        <a class="carousel-item" href="#four!"><img alt="" src="res/eventos/badBunny.jpg"> <p> Concierto de BadBunny en Puerto Rico </p></a>
+                        <a class="carousel-item" href="#five!"><img alt="" src="res/eventos/opera.jpg"> <p> Ópera de Tenerife </p> </a>
+                    </form>
+                </div>
+            
 
             </div>
         </div>
@@ -109,7 +128,99 @@
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
         
 
+        <script>
+        
+            /*function ch_exp(key_pressed){
+                console.log("Cambiado");
+                console.log($(this).attr("id"));
+                console.log(this.id);
+                if(key_pressed.which == 13 || key_pressed.keyCode == 13){
+                    $("div").attr('aria-expanded', 'true');
+                    console.log("dentro");
+                }
+            }*/
+            
+            $('.div_desplegable').keyup('click', function(key_pressed) {
+                if(key_pressed.which == 13 || key_pressed.keyCode == 13){
+                    var id_this = "#";
+                    id_this += $(this).attr("id");
+                    console.log(id_this);
+                    $(id_this).attr('aria-expanded', 'true');
+                }
+            });
+            
+            
+            
+            $('.div_desplegable').keyup('click', function(key_pressed) {
+                if(key_pressed.which == 9| key_pressed.keyCode == 9){
+                    var id_this = "#";
+                    id_this += $(this).attr("id");
+                    console.log(id_this);
+                    $(id_this).attr('aria-expanded', 'false');
+                }
+            });
+            
+            
+            $('.selected').keyup(function(key_pressed){
+                console.log("entro en option");
+                var state = $(this).attr('aria-checked').toLowerCase();
+                if(key_pressed.which == 13 || key_pressed.keyCode == 13){
+                    if (state === 'true') {
+                        $(this).attr('aria-checked', 'false');
+                    }
+                    else {
+                        $(this).attr('aria-checked', 'false');
+                    }
+                }
+            });
+            
+            
+            /*$(function(){
+            function ch_check(event){
+                console.log("Se activó");
+                var node = event.currentTarget;
+                var state = node.getAttribute('aria-checked').toLowerCase();
+                
+                if (event.type === 'click' || (event.type === 'keyup' && event.keyCode === 13)) {
+                    if (state === 'true') {
+                        node.setAttribute('aria-checked', 'false');
+                    }
+                    else {
+                        node.setAttribute('aria-checked', 'true');
+                    }  
 
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            };
+            });*/
+            
+            
+            
+            
+            $('.carousel-item').click(function(){
+                console.log("Pasando el foco");
+                $(this).focus();
+            });
+                
+            
+            
+            
+            $('.carousel-item').keyup('click', function(key_pressed) {
+                console.log("entra");
+                if(key_pressed.which == 37 || key_pressed.keyCode == 37){
+                    var elem = $(this);
+                    console.log(elem);
+                    $('.carousel').carousel('prev');
+                }
+                
+                if(key_pressed.which == 39 || key_pressed.keyCode == 39){
+                    var elem = $(this);
+                    console.log(elem);
+                    $('.carousel').carousel('next');
+                }
+            });
+        </script>
         
     </body>
 </html>

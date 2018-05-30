@@ -1,17 +1,17 @@
 
 body{
-    background-image: url("../res/background.jpg");
+    background-color: #221F1F;
 }
 
 .no-datetime-placeholder input::-webkit-datetime-edit{ color: transparent; }
 
 
 #main{
-    background-color: white;
+    background-color: #F5F5F1;
 }
 
 #color_flama, .page-footer,.btn{
-    background-color: #FF7733;
+    background-color: #E50914;
 }
 
 #filtro{
@@ -79,4 +79,12 @@ color: #ffd119;
 
 .error_class{
     color:red;
+}
+
+a {
+    color: #0d007e;
+}
+
+#label_filtro {
+    color: black;
 }

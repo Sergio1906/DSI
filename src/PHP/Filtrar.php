@@ -1,14 +1,16 @@
-<!DOCTYPE html>
+<?php
+
+
+    $string = '<!DOCTYPE html>
 
 <html lang="es">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="src/design.css">
-        <script type="text/javascript" src="src/dropdown.js"></script>
+        <link rel="stylesheet" href="../design.css">
+        <script type="text/javascript" src="../dropdown.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
         
        
          
@@ -28,20 +30,16 @@
             <div class="col s12">
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
-                        <img src="./res/icono.png" alt="Logotipo de Eventgram" class="left" height="75px" width="75px">
-                        <div class="col s6 push-m2 push-l1">
+                        <img src="../../res/icono.png" alt="Logotipo de Eventgram" class="left" height="75px" width="75px">
+                        <div class="col s4 push-s2">
                             <form>
                                 <div class="input-field">
                                     <input id="search" type="search" required name="barra_busqueda" onKeyUp="buscar();">
                                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
+                                    <i class="material-icons">close</i></input>
                                 </div>
                             </form>
                         </div>
-                        
-                        <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
-                            <i class="material-icons">menu</i>
-                        </a>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="src/log_in.html">Sign in</a></li>
@@ -53,52 +51,40 @@
                         </ul>
                     </div>
                 </nav>
-                
-                <ul id="mobile-nav" class="sidenav">
-                    <li><a href="src/log_in.html">Sign in</a></li>
-                    <li><a href="src/sign_up.html">Sign up</a></li>
-                    <li><a href="src/ayuda.html">Ayuda</a></li>
-                    <li><a href="src/nosotros.html">Nosotros</a></li>
-                    <li><a href="src/encuesta.html">Encuesta</a></li>
-                </ul>
             </div>
         </div>
         
         <div class="row" aria-label="Contenido principal">
-            
-            <div class="col s10 offset-s1 z-depth-2" id="main">
-                
-                <div id="titulo" class="col s12 center-align">EVENTGRAM</div>
-                <br>
-                
+            <div class="col s10 offset-s1 z-depth-4" id="main">
                 <div>
-                    <form action="src/PHP/Filtrar.php" method="POST" >
+                    <form action="Filtrar.php" method ="POST">
                         <br>
                         <div class="row">
-                            <div id="type_div" class="input-field col s10 m4 l2 offset-l1 offset-s1 div_desplegable" tabindex="-1" aria-expanded="false">
+                            <div id="type_div" class="input-field col s2 offset-s1 div_desplegable" tabindex="-1" aria-expanded="false">
                                 <i class="material-icons prefix">description</i>
 
-                                <select multiple id="type_select" name = "eventos[]" >
+                                <select multiple id="type_select" name = "eventos[]" value="">
                                     <option class="type_option" tabindex="-1" value="MUSICA" aria-checked="false">Música</option>
                                     <option class="type_option" tabindex="-1" value="TEATRO" aria-checked="false" onKeyUp="ch_check(event)">Teatro</option>
                                     <option class="type_option" value="DEPORTE" aria-checked="false" onKeyUp="ch_check(event)">Deporte</option>
                                     <option class="type_option" value="CINE" aria-checked="false" onKeyUp="ch_check(event)">Cine</option>
                                     <option class="type_option" value="PINTURA" aria-checked="false" onKeyUp="ch_check(event)">Pintura</option>
                                 </select> 
-                                <label for="eventos[]" id="label_filtro">Tipo de evento</label>
+                                <label for="eventos[]">Tipo de evento</label>
+
                             </div>
                             
                       
                             
-                            <div class="input-field col s10 m4 l2 offset-s1">
+                            <div class="input-field col s2">
                                 <i class="material-icons prefix">date_range</i>
 
-                                <input id ="fecha" type="text" name="fecha" class="datepicker">                                  
-                                <label for="fecha" class="active" id="label_filtro">Fecha</label>
+                                <input type="text" name="fecha" class="datepicker">                                  
+                                <label for="fecha" class="active">Fecha</label>
                             </div>
                             
                       
-                            <div id="state_div" class="input-field col s10 m4 l2 offset-s1 div_desplegable" aria-expanded="false">
+                            <div id="state_div" class="input-field col s2 div_desplegable" aria-expanded="false">
                                 <i class="material-icons prefix">schedule</i>
 
                                 <select id ="estado" name = "estado[]">
@@ -107,113 +93,205 @@
                                     <option value="DISPONIBLE">Disponible</option>
                                     <option value="FINALIZADO">Finalizado</option>
                                 </select>
-                                <label for="estado[]" id="label_filtro">Estado</label>
+                                <label for="estado[]">Estado</label>
+
                             </div>
                             
                       
-                            <div class="input-field col s10 m4 l2 offset-s1">
-                                  <i class="material-icons prefix">location_on</i>
+                            <div class="input-field col s2">
+            
                                   
-                                  <input id="Ciudad" type="text" name = "ciudad" class="validate">
-                                  <label for="Ciudad" id="label_filtro">Ciudad</label>
+                                  <i class="material-icons prefix">location_on</i>
+                                  <input id="Ciudad" type="text" class="validate">
+                                  <label for="Ciudad">Ciudad</label>
                             </div>
-                            
-                            
-                            <div class="col s10 m4 l2 offset-s1 input-field center">
-                                <button id="filter" class="btn waves-effect waves-light " type="submit" action="src/PHP/Filtar.php" method="POST" > Filtrar <i class="material-icons right">search</i></button>
+                            <div class="col s2 input-field center">
+                                <button id="filter" class="btn waves-effect waves-light " name="action" type="submit"
+                                >Filtrar<i class="material-icons right">search</i></button>
                             </div>
                         </div>
-                    </form>
-                  
+                    </form
                 </div>
-                
-                <div id="resultadoBusqueda"  class="carousel" aria-live="assertive">
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/tmrland.jpg">Tomorrowland en Bélgica </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/galery.jpg">Galería de arte en Madrid </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/iberostar.jpg">Partido del Iberostar Tenerife </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/ilove.jpg">Macrofiesta I Love Music en Tenerife </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/circo.jpg">Circo del Sol en Madrid </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/badBunny.jpg">Concierto de BadBunny en Puerto Rico </span>
-                        <span class="carousel-item" tabindex="0"><img alt="" src="res/eventos/opera.jpg">Ópera de Tenerife </span>
-                </div>
-                
-                <a href="src/PHP/welcome.php">link</a>
-               
-            </div>
-        </div>
+                <div id="resultadoBusqueda"  class="carousel" aria-live="assertive">';
         
- 
-        <script>
-            $('.div_desplegable').keyup('click', function(key_pressed) {
+        
+        
+$servidor="localhost";
+$usuario = "id4906591_admin";
+$clave = "12345";
+$basedatos= "id4906591_eventgram";
+
+
+
+$conexion = new mysqli ($servidor,$usuario,$clave,$basedatos);
+
+if($conexion->connect_errno) die("fallo" . $conexion->connect_error);
+
+    $tipo = NULL;
+    $fecha = NULL;
+    $estado = NULL;
+    $ciudad = NULL;
+    $consulta = NULL;
+    
+    if (isset($_POST['eventos'])) {
+    $tipo = $_POST['eventos'];
+    }
+    
+    if (isset($_POST['fecha'])) {
+    $fecha= $_POST['fecha'];
+    }
+    
+    if (isset($_POST['estado'])) {
+    $estado = $_POST['estado'];
+    }
+    
+    if (isset($_POST['ciudad'])) {
+    $tipo = $_POST['ciudad'];
+    }
+
+
+    if($tipo != NULL){
+        if($consulta != NULL){
+            $consulta .= " AND ( Tipo = '$tipo[0]')";
+        }
+        else{
+            $consulta .= "(Tipo = '$tipo[0]')";
+        }
+    }  
+    
+    if($fecha != NULL){
+        if($consulta != NULL){
+            $consulta .= " AND (Fecha = '$fecha')";
+        }
+        else{
+            $consulta .= "(Fecha = '$fecha')";
+        }
+    } 
+    
+    if($estado != NULL){
+        if($consulta != NULL){
+            $consulta .= " AND (Estado = '$estado[0]')";
+        }
+        else{
+            $consulta .= "(Estado = '$estado[0]')";
+        }
+    } 
+    
+    if($ciudad != NULL){
+        if($consulta != NULL){
+            $consulta .= " AND (Ciudad = '$ciudad')";
+        }
+        else{
+            $consulta .= "(Ciudad = '$ciudad')";
+        }
+    }
+    
+    if($consulta === NULL)
+        $SQL = "select * from Eventos";
+    
+    else
+        $SQL = "select * from Eventos where $consulta";
+        
+
+    $Resultado = mysqli_query($conexion,$SQL);
+    $mensaje = NULL;
+    $contador = NULL;
+
+    while($tupla = mysqli_fetch_array($Resultado)) {
+		    
+    $ID_EVENTO =  $tupla["ID_Evento"];
+    
+    $NOMBRE =  $tupla["Nombre"];
+    $FOTO =  $tupla["Foto"];
+    $DESCRIPCION =  $tupla["Descripcion"];
+    $CREADOR =  $tupla["Creador"];
+    $TIPO =  $tupla["Tipo"];
+    $FECHA =  $tupla["Fecha"];
+    $CIUDAD =  $tupla["Ciudad"];
+    $ESTADO =  $tupla["Estado"];
+
+    $string.= '<span class="carousel-item" tabindex="0"><img alt="" src="../../res/eventos/'.$FOTO.'"> 
+                '.$NOMBRE.' </span>';
+                
+			$contador = $contador + 1;
+		}//Fin while $resultados
+
+
+$string .='
+            </div>
+            
+            <script>
+            $(\'.div_desplegable\').keyup(\'click\', function(key_pressed) {
                 if(key_pressed.which == 13 || key_pressed.keyCode == 13){
                     var id_this = "#";
                     id_this += $(this).attr("id");
                     console.log(id_this);
-                    $(id_this).attr('aria-expanded', 'true');
+                    $(id_this).attr(\'aria-expanded\', \'true\');
                 }
             });
             
             
             
-            $('.div_desplegable').keyup('click', function(key_pressed) {
+            $(\'.div_desplegable\').keyup(\'click\', function(key_pressed) {
                 if(key_pressed.which == 9| key_pressed.keyCode == 9){
                     var id_this = "#";
                     id_this += $(this).attr("id");
                     console.log(id_this);
-                    $(id_this).attr('aria-expanded', 'false');
+                    $(id_this).attr(\'aria-expanded\', \'false\');
                 }
             });
             
             
-            $('.selected').keyup(function(key_pressed){
+            $(\'.selected\').keyup(function(key_pressed){
                 console.log("entro en option");
-                var state = $(this).attr('aria-checked').toLowerCase();
+                var state = $(this).attr(\'aria-checked\').toLowerCase();
                 if(key_pressed.which == 13 || key_pressed.keyCode == 13){
-                    if (state === 'true') {
-                        $(this).attr('aria-checked', 'false');
+                    if (state === \'true\') {
+                        $(this).attr(\'aria-checked\', \'false\');
                     }
                     else {
-                        $(this).attr('aria-checked', 'false');
+                        $(this).attr(\'aria-checked\', \'false\');
                     }
                 }
             });
             
-            
-            $('.carousel-item').click(function(){
+            $(\'.carousel-item\').click(function(){
                 console.log("Pasando el foco");
                 if($(this).attr("class") == "carousel-item active"){
-                    var aux = $('img', $(this)).attr('src');
+                    var aux = $(\'img\', $(this)).attr(\'src\');
                     var arr_aux = aux.split("/");
                     var long = arr_aux.length;
-                    var new_url = "src/PHP/Crear_evento.php?nom=" + arr_aux[long-1];
+                    var new_url = "Crear_evento.php?nom=" + arr_aux[long-1];
                     window.location.replace(new_url);
                 }
                 else{
                     $(this).focus();
                 }
-                
             });
             
             
-            $('.carousel-item').keyup('click', function(key_pressed) {
+            
+            $(\'.carousel-item\').keyup(\'click\', function(key_pressed) {
                 console.log("entra");
                 if(key_pressed.which == 37 || key_pressed.keyCode == 37){
                     var elem = $(this);
                     console.log(elem);
-                    $('.carousel').carousel('prev');
+                    $(\'.carousel\').carousel(\'prev\');
                 }
                 
                 if(key_pressed.which == 39 || key_pressed.keyCode == 39){
                     var elem = $(this);
                     console.log(elem);
-                    $('.carousel').carousel('next');
+                    $(\'.carousel\').carousel(\'next\');
                 }
             });
-            
         </script>
+        </div>
+        </div>
     </body>
-</html>
+    </html>
+';   
+    echo $string;
+?>
 
 
-
-<!-- https://mimentevuela.wordpress.com/2015/08/09/busqueda-instantanea-con-ajax-php-y-mysql/ -->

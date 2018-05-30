@@ -32,93 +32,106 @@
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
                         <a href="../index.html"> <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a>
+                        
+                        <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
+                            <i class="material-icons">menu</i>
+                        </a>
 
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
                         	<li><a href="../index.html">Inicio</a></li>
                             <li><a href="./log_in.html">Log in</a></li>
                             <li><a href="./sign_in.html">Sign in</a></li>
+                            <li><a href="./ayuda.html">Ayuda</a></li>
                             <li><a href="./nosotros.html">Nosotros</a></li>
                         </ul>
                     </div>
                 </nav>
+                
+                <ul id="mobile-nav" class="sidenav">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./log_in.html">Log in</a></li>
+                    <li><a href="./sign_in.html">Sign in</a></li>
+                    <li><a href="./ayuda.html">Ayuda</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                </ul>
             </div>
         </div>
         
-	  	<div class ="container">
-	  	<form action="/encuestas/form.php" method="post" onsubmit="return validar()">
-
-			<div class="row">
-				<div class="col s6 offset-s3 center">
-					<p class="titulo_navbar">Bienvenido a la encuesta de satisfacción</p>
+        
+	  	<div class ="container" id="main">
+		  	<form action="/encuestas/form.php" method="post" onsubmit="return validar()">
+	
+				<div class="row">
+					<div class="col s10 offset-s1 offset-m3 offset-l3 center-align">
+						<p class="titulo_navbar">Bienvenido a la encuesta de satisfacción</p>
+					</div>
 				</div>
-			</div>
-	        <div class="row">
-	            <div class="col s10 offset-s1 z-depth-4" id="main">      
-					  <div class="input-field col s4 push-s1">
-					    <select id="select_edad">
-					      <option class="default_value" value="" disabled selected>Seleccionar edad</option>
-					      <option value="Menor a 15 años">Menor a 15 años</option>
-					      <option value="Entre 15 y 20 años">Entre 15 y 20 años</option>
-					      <option value="Entre 20 y 50 años">Entre 20 y 50 años</option>
-					      <option value="Mayor a 50 años">Mayor a 50 años</option>
-					    </select>
-					  </div>
-					  
-					  <div class="input-field col s4 push-s3">
-					    <select id="select_sexo">
-					      <option class="default_value" value="" disabled selected>Seleccionar Sexo</option>
-					      <option value="Masculino">Masculino</option>
-					      <option value="Femenino">Femenino</option>
-					      <option value="Otro">Otro</option>
-					    </select>
-					  </div>
-			  	</div>
-			</div>
-			<div class="row">
-	            <div class="col s10 offset-s1 z-depth-4" id="main"> 
-	
-					<div class="input-field col s6">
-						<label>¿Qué eventos sueles frecuentar?</label><br>
-						<p><label><input type="checkbox" /><span>Música</span></label></p>
-	  			        <p><label><input type="checkbox" /><span>Teatro</span></label></p>
-	   			        <p><label><input type="checkbox" /><span>Cine</span></label></p>
-	   			        <p><label><input type="checkbox" /><span>Deportes</span></label></p>
-	   			        <p><label><input type="checkbox" /><span>Pintura</span></label></p>
-				  	</div>
-				  		
-				  		<div class="input-field col s6">
-				  			<label>¿Con qué frecuencia sueles ir a eventos?:</label><br>
-				                <p><label><input class="with-gap" name="group1" id="vez1" value="off" onclick="cambiar_valor(this);" type="radio"/><span>1 o menos</span></label></p>
-							    <p><label><input class="with-gap" name="group1" id="vez2" value="off" onclick="cambiar_valor();" type="radio"/><span>De 2 a 4</span></label></p>
-							    <p><label><input class="with-gap" name="group1" id="vez3" value="off" onclick="cambiar_valor();" type="radio"/><span>Más de 4</span></label></p>
-						</div>
-				  		
-						<div class="input-field col s4">
-							<select id="select_nota">
-								<option class="default_value" value="">Dar nota a la página</option>
-								<option value="5">Excellent</option>
-								<option value="4">Very Good</option>
-								<option value="3">Average</option>
-								<option value="2">Poor</option>
-								<option value="1">Terrible</option>
-							</select>
-							
-					  	</div>
-					  	
-	
-	    				<div class="input-field col s12">
-				          <i class="material-icons prefix">mode_edit</i>
-				          <textarea id="icon_prefix2" class="materialize-textarea" autocomplete="section-red shipping language"></textarea>
-				          <label for="icon_prefix2">Comentario:</label>
-				        </div>
-	
-			              <button id = "enviar_form" class="btn waves-effect waves-light" type="submit" name="action" onclick="return validacion();">Envir encuesta<i class="material-icons right">send</i></button>
-			              <br></br>
-				</div>
-			</div>
-		</form>
 				
-
+		        <div class="row">
+		            <div class="col s10 offset-s1 z-depth-4">      
+						  <div class="input-field col s10 m5 l5 push-s1 push-m1 push-l1">
+						    <select id="select_edad">
+						      <option class="default_value" value="" disabled selected>Seleccionar edad</option>
+						      <option value="Menor a 15 años">Menor a 15 años</option>
+						      <option value="Entre 15 y 20 años">Entre 15 y 19 años</option>
+						      <option value="Entre 20 y 50 años">Entre 20 y 49 años</option>
+						      <option value="Mayor a 50 años">Mayor a 50 años</option>
+						    </select>
+						  </div>
+						  
+						  <div class="input-field col s10 m5 l5 push-s1 push-m1 push-l1">
+						    <select id="select_sexo">
+						      <option class="default_value" value="" disabled selected>Seleccionar Sexo</option>
+						      <option value="Masculino">Masculino</option>
+						      <option value="Femenino">Femenino</option>
+						      <option value="Otro">Otro</option>
+						    </select>
+						  </div>
+				  	</div>
+				</div>
+				
+				<div class="row">
+		            <div class="col s10 offset-s1 z-depth-4"> 
+						<div class="input-field col s12 m6 l6">
+							<label>¿Qué eventos sueles frecuentar?</label><br><br>
+							<p><label><input type="checkbox" /><span>Música</span></label></p>
+		  			        <p><label><input type="checkbox" /><span>Teatro</span></label></p>
+		   			        <p><label><input type="checkbox" /><span>Cine</span></label></p>
+		   			        <p><label><input type="checkbox" /><span>Deportes</span></label></p>
+		   			        <p><label><input type="checkbox" /><span>Pintura</span></label></p>
+					  	</div>
+					  		
+					  		<div class="input-field col s12 m6 l6">
+					  			<label>¿Con qué frecuencia sueles ir a eventos?:</label><br><br>
+					                <p><label><input class="with-gap" name="group1" id="vez1" value="off" onclick="cambiar_valor(this);" type="radio"/><span>1 o menos</span></label></p>
+								    <p><label><input class="with-gap" name="group1" id="vez2" value="off" onclick="cambiar_valor();" type="radio"/><span>De 2 a 4</span></label></p>
+								    <p><label><input class="with-gap" name="group1" id="vez3" value="off" onclick="cambiar_valor();" type="radio"/><span>Más de 4</span></label></p>
+							</div>
+					  		
+							<div class="input-field col s10 m4 l4 offset-s1">
+								<select id="select_nota">
+									<option class="default_value" value="">Dar nota a la página</option>
+									<option value="5">Excellent</option>
+									<option value="4">Very Good</option>
+									<option value="3">Average</option>
+									<option value="2">Poor</option>
+									<option value="1">Terrible</option>
+								</select>
+								
+						  	</div>
+						  	
+		
+		    				<div class="input-field col s12">
+					          <i class="material-icons prefix">mode_edit</i>
+					          <textarea id="icon_prefix2" class="materialize-textarea" autocomplete="section-red shipping language"></textarea>
+					          <label for="icon_prefix2">Comentario:</label>
+					        </div>
+		
+				              <button id = "enviar_form" class="btn waves-effect waves-light" type="submit" name="action" onclick="return validacion();">Enviar encuesta<i class="material-icons right">send</i></button>
+				              <br></br>
+					</div>
+				</div>
+			</form>
 		</div>
 
     </body>

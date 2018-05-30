@@ -1,0 +1,37 @@
+
+body{
+    background-color: #221F1F;
+}
+
+.no-datetime-placeholder input::-webkit-datetime-edit{ color: transparent; }
+
+#main{
+    background-color: white;
+}
+
+#color_flama, .page-footer,.btn{
+    background-color: #E50914;
+}
+
+h1{
+    text-align: center;
+    float: inherit;
+}
+
+h2, h3{
+    font-size: 4vw;
+}
+
+.titulo_navbar{
+    font-size: 36px;
+    float: inherit;
+    text-align: center;
+}
+
+.clasificacion{
+  color: orange;
+}
+
+.fondo{
+    background-color: white;
+}

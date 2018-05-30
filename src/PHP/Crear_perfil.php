@@ -1,14 +1,9 @@
 <?php
-$pepe = "aaaaaaaaaaaaaaaaaa";
-//echo "<p>" . $pepe . "</p>";
 
 $servidor="localhost";
 $usuario = "id4906591_admin";
 $clave = "12345";
 $basedatos= "id4906591_eventgram";
-
- 
-
 
 
 $conexion = new mysqli ($servidor,$usuario,$clave,$basedatos);
@@ -17,145 +12,121 @@ if($conexion->connect_errno) die("fallo" . $conexion->connect_error);
     
     
 else{ 
-    echo "<p>" . $pepe . "</p>";
     
-    $SQL = "select * from Usuarios";
+    $USER = ($_REQUEST['id']);
+    
+    $SQL = "select * from Usuarios Where ID = '$USER'";
     
     $Resultado = mysqli_query($conexion,$SQL);
     
     $tupla = mysqli_fetch_array($Resultado,MYSQLI_ASSOC);
     
     $ID =  $tupla["ID"];
-
+    $NOMBRE =  $tupla["Nombre"];
+    $SEXO =  $tupla["Sexo"];
+    $EDAD =  $tupla["Edad"];
     
-    $string = '<head>
-        <meta charset="UTF-8">
-        
+    $SQL2 = "select * from Eventos Where Creador = '$USER'";
+    
+    $Resultado2 = mysqli_query($conexion,$SQL2);
+    
+    $string = '<!DOCTYPE html>
+
+<html lang="es">
+    <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../design.css">
+        <script type="text/javascript" src="../src/dropdown.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
-        
-        <link rel="stylesheet" href="design.css">
-        <script type="text/javascript" src="dropdown.js"></script>
-        
-        <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
-        
-        <script src="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth__es.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" />
-        
-        
+       
+         
+        <meta charset="UTF-8">
         <meta name="description" content="Página de inicio">
         <meta name="keywords" content="Eventgram, eventos">
         <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Inicio Sesión</title>
+        
+        <title>Eventgram</title>
+        
+        
     </head>
-
-
-<body>
     
-    <div class ="container">
+    <body>
         <div class="row">
             <div class="col s12">
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
-                        <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px">
-                            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                <li><a href="formulario.html">Encuesta</a></li>
-                                <li><a href="./about_us.html">About us</a></li>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="./log_in.html">Log in</a></li>
-                            </ul>
+                        <a href="../../index.html"> <img src="../../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a>
+                        <div class="col s4 push-s2">
+                            <form>
+                                <div class="input-field">
+                                    <input id="search" type="search" required name="barra_busqueda" onKeyUp="buscar();">
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
                         </div>
+                        
+                        <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="../log_in.html">Log in</a></li>
+                            <li><a href="../sign_in.html">Sign in</a></li>
+                            <li><a href="../ayuda.html">Ayuda</a></li>
+                            <li><a href="../nosotros.html">Nosotros</a></li>
+                            <li><a href="../encuesta.html">Encuesta</a></li>
+
+                        </ul>
+                    </div>
                 </nav>
+                
+                <ul id="mobile-nav" class="sidenav">
+                    <li><a href="../log_in.html">Sign in</a></li>
+                    <li><a href="../sign_up.html">Sign up</a></li>
+                    <li><a href="../ayuda.html">Ayuda</a></li>
+                    <li><a href="../nosotros.html">Nosotros</a></li>
+                    <li><a href="../encuesta.html">Encuesta</a></li>
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="col s6 offset-s3 center">
-                 <p class = "titulo_navbar" >Regístrate en Eventgram</p>
+         <div class="row">
+          <div class="col s12 center">
+            <div class="col s4 offset-s4">
+              <img class="circle responsive-img" src="../../res/p.png" alt="foto de perfil">
+              <h3>'.$NOMBRE.'</h3>
+            </div> <div class="col s4 offset-s1">
+                <label>eventos creados</label>';
+                
+            while($aux = mysqli_fetch_array($Resultado2)) {
+            
+                $N_EVENTO = $aux['Nombre'];
+                $FOTO = $aux['Foto'];
+			    $string .= '<a href= "https://infoevent.000webhostapp.com/src/PHP/Crear_evento.php?nom='.$FOTO.'" > '.$N_EVENTO.' </a>';
+		    }
+                
+                
+            $string .=' </div>
+
+            <div class="col s4 offset-s2">
+                  <label>datos personales</label>
+                  <p> '.$SEXO.'</p>
+                  <p> '.$EDAD.'</p>
+                  
             </div>
-        </div>
-    
-
-    <div class = "row">
-        <form id = "main">
-            <div id="Regis" >
-                    <div class="row">
-                        <div class="input-field col s6">
-                          <i class="material-icons prefix">account_box</i>
-                          <input id="Nombre" type="text" class="validate">
-                          <label for="icon_prefix">Nombre</label>
-                        </div>
-                        <div class="input-field col s6">
-                             <i class="material-icons prefix">account_circle</i>
-                             <input id="Email" type="text" class="validate">
-                             <label for="icon_prefix">Correo</label>
-                        </div>
-                        
-                        
-                        </div>
-                        
-                        <div class="row">
-                        <div class="input-field col s6">
-                          <i class="material-icons prefix">wc</i>
-                          <input id="Sexo" type="text" class="validate">
-                          <label for="icon_prefix">Sexo</label>
-                        </div>
-                        <div class="input-field col s6">
-                             <i class="material-icons prefix">looks_one</i>
-                             <input id="Edad" type="text" class="validate">
-                             <label for="icon_prefix">Edad:' . $ID . '</label>
-                        </div>
-                        
-                        
-                        </div>
-                    <div class="row">
-                            <div class="input-field col s6">
-                              <i class="material-icons prefix">vpn_key</i>
-                              <input id="Password" type="password" class="validate">
-                              <label for="icon_prefix">password mínimo seis carácteres</label>
-                            </div>
-                            <div class="input-field col s6">
-                              <i class="material-icons prefix">vpn_key</i>
-                              <input id="Password2" type="password" class="validate">
-                              <label for="icon_prefix">Repetir Password</label>
-                            </div>
-                        </div>
-                        
-                        <div class = "col s3 push-s5">
-                        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Registrarse
-                        <i class="material-icons right">send</i></button> <br>
-                </div>
-              </div>
             </div>
-        </form>
-    </div>
-          
+            </div>
+        </body>
+    </html>';
+}
 
-
-    
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
-    <script type="text/javascript" src="auth.js"></script>
-    
-    
-    
-    
-    
-    
-</body>';
     echo $string;
     
 
-   
-
-    
-}
 
 
 ?>

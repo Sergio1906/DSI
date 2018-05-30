@@ -9,62 +9,94 @@
         <script type="text/javascript" src="dropdown.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
+
+        <!-- <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
 
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth__es.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" />
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" /> -->
 
         <meta charset="UTF-8">
         <meta name="description" content="Página de inicio">
         <meta name="keywords" content="Eventgram, eventos">
         <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
 
         <title>Inicio Sesión</title>
     </head>
 
 <body>
-    <div>
-        <div class="row">
-            <div class="col s12">
-                <nav>
-                    <div id="color_flama" class="nav-wrapper" >
-                        <a href="../index.html">   <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a>
-                            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                <li><a href="../index.html">Inicio</a></li>
-                                <li><a href="sign_in.html">Sign in</a></li>
-                                <li><a href="ayuda.html">Ayuda</a></li>
-                                <li><a href="./nosotros.html">Nosotros</a></li>
-                                <li><a href="encuesta.html">Encuesta</a></li>
-                            </ul>
-                        </div>
-                </nav>
-            </div>
-        </div>
-        <div class="row container">
-            <div class="col s6 offset-s3 center">
-                 <p class = "titulo_navbar" >Inicia sesión en Eventgram</p>
-            </div>
-        </div>
-
-
-        <div class = "row"  >
-            <div id = "datos" class="sesion">
-                <div class = "col s3 push-s3" id="main">
-                     <input type="text" id="LI_email" placeholder="Correo"><br>
+    <div class="row">
+        <div class="col s12">
+            <nav>
+                <div id="color_flama" class="nav-wrapper" >
+                    <img src="../res/icono.png" alt="Logotipo de Eventgram" class="left" height="75px" width="75px">
+                    <div class="col s4 push-s2">
+                        <form>
+                            <div class="input-field">
+                                <input id="search" type="search" required name="barra_busqueda" onKeyUp="buscar();">
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i></input>
+                            </div>
+                        </form>
+                    </div>
+                        
+                    <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="sign_up.html">Sign up</a></li>
+                        <li><a href="ayuda.html">Ayuda</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="encuesta.html">Encuesta</a></li>
+                    </ul>
                 </div>
-                 <div class = "col s3 push-s3" id="main">
-                      <input type="password" id="LI_password" placeholder="Password"><br>
+            </nav>
+                
+            <ul id="mobile-nav" class="sidenav">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="sign_up.html">Sign up</a></li>
+                <li><a href="ayuda.html">Ayuda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="encuesta.html">Encuesta</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div id="main" class="col s10 offset-s1 z-depth-2">
+            <div class="row container col s12 m8 l8 offset-m2 offset-l2">
+                <div class="col s12 m10 l10 offset-m1 offset-l1">
+                    <p class="titulo_navbar" >Inicia sesión en Eventgram</p>
                 </div>
             </div>
-        </div>
-        <div class = "row">
-            <div class = "col s3 push-s5">
-                    <button id = "iniciar_sesion" class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesión
-                    <i class="material-icons right">send</i></button> <br>
+            
+            
+            <div class = "row">
+                <div id = "datos" class="sesion">
+                    <div class = "col s10 m5 l4 offset-s1 offset-m1 offset-l1">
+                        <input type="text" id="LI_email" placeholder="Correo"><br>
+                    </div>
+                    
+                    <div class = "col s10 m5 l4 offset-s1 offset-l2">
+                         <input type="password" id="LI_password" placeholder="Password"><br>
+                    </div>
+                </div>
             </div>
+        </div>  
+    </div>
+    
+    
+    <div class = "row">
+        <div class = "col s3 m3 l3 push-s4 push-m5 push-l5">
+            <button id = "iniciar_sesion" class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesión
+            <i class="material-icons right">send</i></button> <br>
         </div>
     </div>
 
@@ -72,12 +104,12 @@
 
         <footer class="page-footer container">
             <div class="row">
-              <div class="col s10 offset-s1">
-                    <div class="col s4 push-s1">
+              <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                    <div class="col s12 m6 l6 center-align">
                         <a class="waves-effect waves-light btn-flat" href="Reset_password.html"> ¿Olviste tu contraseña?</a>
                     </div>
-                    <div class="col s4 push-s3">
-                        <a class="waves-effect waves-light btn-flat" href="Sign_in.html"> ¿Nuevo en Eventgram?</a><br>
+                    <div class="col s12 m6 l6 center-align">
+                        <a class="waves-effect waves-light btn-flat" href="sign_up.html"> ¿Nuevo en Eventgram?</a><br>
                     </div>
                 </div>
               </div>
@@ -88,16 +120,11 @@
         <script>
 
         </script>
-
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
     <script type="text/javascript" src="auth.js"></script>
 
 
-</body>
-
-
-
-
-
-
+    </body>
 </html>
+

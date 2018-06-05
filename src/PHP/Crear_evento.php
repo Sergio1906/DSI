@@ -87,7 +87,7 @@ else{
                 <ul id="mobile-nav" class="sidenav">
                     <li><a href="../../index.html">Inicio</a></li>
                     <li><a href="../log_in.html"> Sign in</a></li>
-                    <li><a href="../sign_in.html">Sign up</a></li>
+                    <li><a href="../sign_up.html">Sign up</a></li>
                     <li><a href="../ayuda.html">Ayuda</a></li>
                     <li><a href="../nosotros.html">Nosotros</a></li>
                     <li><a href="../encuesta.html">Encuesta</a></li>
@@ -106,7 +106,7 @@ else{
               
               
               <br><br><br><br><br><br>
-              <h2>Puntuación</h2>
+              <h3>Puntuación</h3>
               <div class = "clasificacion">
                 ★★★★★★  <br> 5 ESTRELLAS 
               </div>

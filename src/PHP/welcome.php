@@ -77,7 +77,7 @@
             </div>
         </div>
         <div id="main" class="row container">
-            <div class="col s12 m12 l12 center-align">BIENVENIDO
+            <div class="col s12 m12 l12 center-align"> <h1>BIENVENIDO </h1>
                 <p>Estamos muy contentos de que formes parte de nuestra comunidad.</p>
                 <p>Por favor, entra en tu perfil y personalizalo a tu gusto</p>
                 <br>

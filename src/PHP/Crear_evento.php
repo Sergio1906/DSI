@@ -18,7 +18,6 @@ else{
     $ID = ($_REQUEST['nom']);
 
     $SQL = "select * from Eventos where Foto = '$ID' ";
-    
 
     $Resultado = mysqli_query($conexion,$SQL);
 
@@ -42,16 +41,8 @@ else{
     $CORREO = $tupla2["Correo"];
 
 
-    $string = '<head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="../design_php.css">
-        <script type="text/javascript" src="../dropdown.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
+    $string = ' <!DOCTYPE html> <html lang=es>
+        <head>
         <meta charset="UTF-8">
         <meta name="description" content="Página de inicio">
         <meta name="keywords" content="Eventgram, eventos">
@@ -60,7 +51,13 @@ else{
         
         <title>Evento</title>
         
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="../design.css">
+        <script type="text/javascript" src="../dropdown.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     </head>
     
     <body>
@@ -68,15 +65,8 @@ else{
             <div class="col s12">
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
-                        <a href="../../index.html"> <img src="../../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a> 
+                        <a id="main-content" href="#main"><img src="../../res/icono.png" alt="Logotipo de Eventgram" id="logo" class = "left" ></a> 
                         <div class="col s4 push-s2">
-                            <form>
-                                <div class="input-field">
-                                    <input id="search" type="search" required name="barra_busqueda" onKeyUp="buscar();">
-                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </form>
                         </div>
                         
                         <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
@@ -84,9 +74,9 @@ else{
                         </a>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="../../index.html>Inicio</a></li>
+                            <li><a href="../../index.html">Inicio</a></li>
                             <li><a href="../log_in.html">Sign in</a></li>
-                            <li><a href="../sign_up.html">Sign up</a></li>
+                            <li><a href="../sign_up.html"> Sign up </a></li>
                             <li><a href="../ayuda.html">Ayuda</a></li>
                             <li><a href="../nosotros.html">Nosotros</a></li>
                             <li><a href="../encuesta.html">Encuesta</a></li>
@@ -95,29 +85,30 @@ else{
                 </nav>
                 
                 <ul id="mobile-nav" class="sidenav">
-                    <li><a href="../../index.html>Inicio</a></li>
-                    <li><a href="src/log_in.html">Log in</a></li>
-                    <li><a href="src/sign_in.html">Sign in</a></li>
-                    <li><a href="src/ayuda.html">Ayuda</a></li>
-                    <li><a href="src/nosotros.html">Nosotros</a></li>
-                    <li><a href="src/encuesta.html">Encuesta</a></li>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../log_in.html"> Sign in</a></li>
+                    <li><a href="../sign_in.html">Sign up</a></li>
+                    <li><a href="../ayuda.html">Ayuda</a></li>
+                    <li><a href="../nosotros.html">Nosotros</a></li>
+                    <li><a href="../encuesta.html">Encuesta</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="row container center-align" id="main">
-            <div class="col s10 m5 l4 offset-s1 offset-l1 fondo z-depth-4">
-              <div class="col s5 m2 l2 offset-s4 offset-m1 offset-l1">
-                <i class="medium material-icons">people</i> <br> <a href="https://infoevent.000webhostapp.com/src/PHP/Crear_perfil.php?id='.$CREADOR.'"> '.$USER.' </a>
+            <div class="col s10 m5 l4 offset-s1 offset-l1 fondo ">
+              <div class="col s12 m2 l2 offset-m1 offset-l1 center-align">
+                <i class="medium material-icons">people</i> <a href="https://infoevent.000webhostapp.com/src/PHP/Crear_perfil.php?id='.$CREADOR.'"><p>'.$USER.'</p></a>
               </div>
-              <div class="col s5 m2 l2 offset-s4 offset-m3 offset-l2">
-                <i class="medium material-icons">mail</i><p>'.$CORREO.'  </p>
+              <div class="col s12 m2 l2 offset-m3 offset-l2 center-align">
+                <i class="medium material-icons">mail</i><p>'.$CORREO.'</p><br>
               </div>
               
-
-              <h3>Puntuación</h3>
+              
+              <br><br><br><br><br><br>
+              <h2>Puntuación</h2>
               <div class = "clasificacion">
-                   ★★★★★★
+                ★★★★★★  <br> 5 ESTRELLAS 
               </div>
               <div>
               <p> Comentarios </p>
@@ -126,15 +117,15 @@ else{
 
 
 
-            <div class="col s10 m7 l6 offset-s1 fondo z-depth-4">
-              <h2> <strong>'.$NOMBRE.' </strong> </h2>
+            <div class="col s10 m7 l6 offset-s1 fondo ">
+              <h1 id="title_event"><strong>'.$NOMBRE.'</strong></h1>
               <img class="responsive-img z-depth-3" src="../../res/eventos/'.$FOTO.'" alt="foto del evento">
               <div>
               <br>
               '.$DESCRIPCION.'
               </div>
-              <br></br>
-              <h5 class="black-text">Enlaces de interés</h5>
+              <br>
+              <h3 class="black-text">Enlaces de interés</h3>
               <div class="col s5 m6 l3">
                   <i class="medium material-icons">home</i>
                   <br>
@@ -143,7 +134,7 @@ else{
               <div class="col s5 m6 l3 offset-s1">
                   <i class="medium material-icons">cloud</i>
                   <br>
-                  <a href="../nosotros.html"> About us </a>
+                  <a href="../nosotros.html"> Nosotros </a>
               </div>
               <div class="col s5 m6 l3">
                   <i class="medium material-icons"> computer </i>
@@ -153,13 +144,14 @@ else{
               <div class="col s5 m6 l3 offset-s1">
                   <i class="medium material-icons">create</i>
                   <br>
-                  <a href="../log_in.html"> Log In </a>
+                  <a href="../log_in.html"> Sign in </a>
               </div>
               </div>
        
-            </div>
         </div>
-    </body>';
+        
+    </body>
+    </html>';
 
     echo $string;
   }

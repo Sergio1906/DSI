@@ -29,18 +29,20 @@ if (isset($consultaBusqueda)) {
 	$SQL = "SELECT * FROM Eventos WHERE Nombre LIKE '%$consultaBusqueda%'";
 	$consulta = mysqli_query($conexion, $SQL);
 
-	//Obtiene la cantidad de filas que hay en la consulta
-	//$filas = mysqli_num_rows($consulta);
-
 	//Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 	if ($consulta == NULL) {
 		$mensaje = "<p>No hay resultados</p>";
 	} else {
 		//Si existe alguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
-		echo 'Resultados para <strong>'.$consultaBusqueda.'</strong>';
+		//echo 'Resultados para <strong>'.$consultaBusqueda.'</strong>';
 
 		//La variable $resultado contiene el array que se genera en la consulta, así que obtenemos los datos y los mostramos en un bucle
 	    $contador = 1;
+	    $num_row = mysqli_num_rows ($consulta);
+	    if($num_row < 3){
+	        $mensaje .= '<div class="row">';
+	    }
+	    
 		while($resultados = mysqli_fetch_array($consulta)) {
 		    
 			$nombre_foto = $resultados['Foto'];
@@ -48,13 +50,26 @@ if (isset($consultaBusqueda)) {
             
 
 			//Output
-			//$mensaje .= '<button name="ACTION" type="submit" class="carousel-item" value="'.$contador.'"><img alt="" style="height:100%; width:100%" src="'.$nombre_foto.'"/><span>' .$name.'</span></button>';
-			$mensaje .= '<span class="carousel-item" tabindex="0"><img alt="" src="'.$nombre_foto.'">'.$name.' </span>';
+			if($num_row > 2){
+			    $mensaje .= '<a class="carousel-item" href="src/PHP/Crear_evento.php?nom='.$nombre_foto.'"><img alt="" src="https://infoevent.000webhostapp.com/res/eventos/'.$nombre_foto.'">'.$name.' </a>';
+			}
+			else{
+			    if($num_row == 2){
+			        $mensaje .= '<div class="col s12 m6 l6 center-align"><a href="src/PHP/Crear_evento.php?nom='.$nombre_foto.'"><img  class="car_it" alt="" src="https://infoevent.000webhostapp.com/res/eventos/'.$nombre_foto.'"><p>'.$name.'</p></a></div>';
+			    }
+			    else{
+			        $mensaje .= '<div class="col s12 m6 l6 offset-m3 offset-l3 center-align"><a href="src/PHP/Crear_evento.php?nom='.$nombre_foto.'"><img  class="car_it" alt="" src="https://infoevent.000webhostapp.com/res/eventos/'.$nombre_foto.'"><p>'.$name.'</p></a></div>';
+			    }
+			}
 			
 			$contador = $contador + 1;
 			
 
 		};//Fin while $resultados
+		
+		if($num_row < 3){
+	        $mensaje .= '</div>';
+	    }
 
 	}; //Fin else $filas
 

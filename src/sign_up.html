@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Página para registrarse en la web">
+        <meta name="keywords" content="Eventgram, eventos">
+        <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Registrarse</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
@@ -14,40 +20,16 @@
         <link rel="stylesheet" href="design.css">
         <script type="text/javascript" src="dropdown.js"></script>
 
-        
-
-        <!-- <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
-
-        <script src="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth__es.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" /> -->
-
-
-        <meta name="description" content="Página de inicio">
-        <meta name="keywords" content="Eventgram, eventos">
-        <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Inicio Sesión</title>
     </head>
 
 
 <body>
-    
     <div class="row">
         <div class="col s12">
             <nav>
                 <div id="color_flama" class="nav-wrapper" >
-                    <a href="../index.html"> <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a> 
-                    <div class="col s4 push-s2">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required name="barra_busqueda" onKeyUp="buscar();">
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i></input>
-                            </div>
-                        </form>
-                    </div>
+                    <a id="main-content" href="#main"><img src="../res/icono.png" alt="Logotipo de Eventgram" id="logo" class = "left" ></a>
+                    <div class="col s4 push-s2"></div>
                     
                     <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
                         <i class="material-icons">menu</i>
@@ -76,9 +58,9 @@
     
     <div class="row">
         <div id="main" class="col s10 offset-s1 z-depth-2">
-            <div class="row container col s12 m8 l8 offset-m2 offset-l2">
+            <div class="row container col s12 m10 l10 offset-m1 offset-l1">
                 <div class="col s12 m10 l10 offset-m1 offset-l1">
-                    <p class="titulo_navbar" >Registrate en Eventgram</p>
+                    <h1>Registrate en Eventgram</h1>
                 </div>
             </div>
     
@@ -86,28 +68,36 @@
             <div class = "row">
                 <div id="Regis" >
                     <div class="row">
+                        <div id="err_div" class="col s12 center-align"></div>
                         <div id="div_SIname_id" class="input-field col s10 m5 l4 offset-s1 offset-m1 offset-l1">
                             <i class="material-icons prefix">account_box</i>
                             <input id="Nombre" type="text" class="validate">
                             <label for="Nombre">Nombre</label>
+                            <div id="name_alert_icon" class="col s2 m2 l2 offset-s10 offset-m10 offset-l10">
+                                
+                            </div>
+                        
                         </div>
                         <div id="div_SIemail_id" class="input-field col s10 m5 l4 offset-s1 offset-l1">
                             <i class="material-icons prefix">account_circle</i>
                             <input id="SI_email" type="text" class="validate">
                             <label for="SI_email">Correo</label>
+                            <div id="mail_alert_icon" class="col s2 m2 l2 offset-s10 offset-m10 offset-l10">
+                                
+                            </div>
                         </div>
                     </div>
         
                     <div class="row">
                         <div class="input-field col s10 m5 l4 offset-s1 offset-m1 offset-l1 div_desplegable">
                             <i class="material-icons prefix">wc</i>
-                            <select id="Sexo" name="sexo[]">
+                            <select id="Sexo">
                                 <option value="" disabled selected></option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
                                 <option value="3">Otro</option>
                             </select>
-                            <label for="sexo[]">Sexo</label>
+                            <label for="Sexo">Sexo</label>
                         </div>
                         <div class="input-field col s10 m5 l4 offset-s1 offset-l1">
                             <i class="material-icons prefix">looks_one</i>

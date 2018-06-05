@@ -1,90 +1,96 @@
+body{background-color: #221F1F;}
 
-body{
-    background-color: #221F1F;
-}
+a {color: #0d007e;}
 
-.no-datetime-placeholder input::-webkit-datetime-edit{ color: transparent; }
+p,legend {font-family:Questrial;}
 
-
-#main{
-    background-color: #F5F5F1;
-}
-
-#color_flama, .page-footer,.btn{
-    background-color: #E50914;
-}
-
-#filtro{
-    background-color: #9933ff;
-}
-
-.carousel-item{
-    text-align: center;
-    
-}
-
-#filter{
-    text-align: center;
+span, label {
+    color: black;
+    font-family:Questrial;
 }
 
 h1{
-    text-align: center;
-    float: inherit;
-}
-.titulo_navbar{
     font-size: 36px;
-    float: inherit;
     text-align: center;
+    font-family:Questrial;
 }
 
-	
+h2{
+    font-size: 3vw;
+    font-family:Questrial;
+}
+
+h3{
+    font-size: 2vw;
+    font-family:Questrial;
+}
+
 ::placeholder {
     color: black;
+    font-family:Questrial;
 }
 
-.page-footer a{
-    color: black;
+.input-field>label {
+	color: black;
+	font-family:Questrial;
 }
+
+.clasificacion{
+  color: #797200;
+  font-family:Questrial;
+}
+
+.error_class {
+    color: red;
+}
+.no-datetime-placeholder input::-webkit-datetime-edit{ color: transparent; }
 
 .carousel .carousel-item{
     width: 500px;
-    height: 300px;  
+    height: 500px;  
 }
 
-.carousel{
-    height: 500px;
+.carousel-item img{
+    height:75%;
+    width:75%;
 }
 
-#main2 {
-    background-color: transparent;
+.car_it{
+    height:45vh;
+    width:40vw;
 }
 
-#div_nosotros {
-    background-color: white;
-    border-top-width: 10px;
-    border-right-width: 1em;
-  border-bottom-width: thick;
-  border-left-width: thin;
-}
+.carousel-item{text-align: center;}
 
-.starrr { display: inline-block; }
- 
-.starrr i {
-font-size: 16px;
-padding: 0 1px;
-cursor: pointer;
-color: #ffd119;
-}
-
-
-.error_class{
-    color:red;
-}
-
-a {
-    color: #0d007e;
-}
-
-#label_filtro {
+.label_u{
+    font-family:Questrial;
     color: black;
+    font-size: 175%;
+}
+
+#title_event{
+    font-size: 4vw;
+    font-family:Questrial;
+}
+
+#resultadoBusqueda{height: 350px;}
+
+#logo{
+    width:65px;
+    height:65px;
+}
+
+#main{
+    background-color: #F5F5F1;
+    border-radius: 2vw;
+}
+
+#color_flama, .btn{
+    background-color: #E50914;
+    font-family:Questrial;
+}
+
+#titulo{
+    font-family: 'Bangers', cursive; 
+    font-size:12vw;
 }

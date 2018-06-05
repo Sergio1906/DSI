@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
     <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Página de inicio">
+        <meta name="keywords" content="Eventgram, eventos">
+        <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Eventgram</title>
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -15,13 +23,6 @@
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth__es.js"></script>
         <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.6.3/firebase-ui-auth.css" />
          
-        <meta charset="UTF-8">
-        <meta name="description" content="Página de inicio">
-        <meta name="keywords" content="Eventgram, eventos">
-        <meta name="author" content="Juan Carlos González Pascolo, Sergio del Pino Hernández y Pedro Antonio Lima A.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Eventgram</title>
     </head>
     
     <body>
@@ -29,7 +30,7 @@
             <div class="col s12">
                 <nav>
                     <div id="color_flama" class="nav-wrapper" >
-                        <a href="../index.html"> <img src="../res/icono.png" alt="Logo" class="left" height="75px" width="75px"></a> 
+                        <a id="main-content" href="#main"><img src="../res/icono.png" alt="Logotipo de Eventgram" id="logo" class = "left" ></a>
                         
                         <a href="#" class="sidenav-trigger right" data-target="mobile-nav">
                             <i class="material-icons">menu</i>
@@ -57,8 +58,8 @@
         
 	  	<div class ="container" id="main">
 	  	    <div class="row">
-    			<div class="col s10 offset-s1 offset-m3 offset-l3 center-align">
-    				<h1 class="titulo_navbar">Información de los creadores</h1>
+    			<div class="col s10 offset-s1 center-align">
+    				<h1>Información de los creadores</h1>
     			</div>
 		    </div>
 		    
@@ -67,46 +68,46 @@
                     <span class="col s12 m4 l4">Sergio del Pino &nbsp;&nbsp;</span>
                     <span class="col s12 m4 l4 ">Pedro Lima &nbsp;&nbsp;</span>
                     <span class="col s12 m4 l4">Juan Carlos Pascolo</span>
-                    <img src="../res/foto_equipo.jpg" alt="" class="responsive-img z-depth-2" ></img>
+                    <img src="../res/foto_equipo.jpg" alt="" class="responsive-img z-depth-2" >
                 </div>
             </div>
             <div class="row">
                 <div class="col s12" >
                     <div class="row col s10 offset-s1 z-depth-2" >
-                        <div class="col s2"><img src="../res/perfil_sergio.jpg" alt="" class="responsive-img"></img></div>
-                        <div class="col s10" id="main">
-                            <p class="sub_titulo">Nombre:&nbsp;Sergio del Pino Hernández.</p>
+                        <div class="col s4 m3 l3"><img src="../res/perfil_sergio.jpg" alt="" class="responsive-img"></div>
+                        <div class="col s8 m7 l9">
+                            <p>Nombre:&nbsp;Sergio del Pino Hernández.</p>
                             <p>Edad:&nbsp;20&nbsp;años.</p>
-                            <p>Descripción:&nbsp;Estudiante de Ingeniería informática especializado en TIC. 
+                            <p>Descripción:&nbsp; Estudiante de Ingeniería informática especializado en TIC. 
                                 Haciéndose famoso desde 2016 con su "#code_time" y sus canciones de "Bad Bunny".</p>
                         </div>
                     </div>
                     <div class="row col s10 offset-s1 z-depth-2">
-                        <div class="col s2"><img src="../res/perfil_juank.jpg" alt="" class="responsive-img" ></img></div>
-                        <div class="col s10" id="main">
+                        <div class="col s4 m3 l3"><img src="../res/perfil_juank.jpg" alt="" class="responsive-img" ></div>
+                        <div class="col s8 m7 l9">
                             <p>Nombre:&nbsp;Juan Carlos Gozález Pascolo.</p>
                             <p>Edad:&nbsp;20&nbsp;años.</p>
-                            <p>Descripción:&nbsp;Estudiante de Ingeniería informática especializado en TIC. 
+                            <p>Descripción:&nbsp; Estudiante de Ingeniería informática especializado en TIC. 
                                                          Haciéndose famoso desde 2015 metiéndose con todos y todas, sobre todo con Bea.</p>
                         </div>
                     </div>
                     <div class="row col s10 offset-s1 z-depth-2">
-                        <div class="col s2"><img src="../res/perfil_pedro.jpg" alt="" class="responsive-img"></img></div>
-                        <div class="col s10" id="main">
+                        <div class="col s4 m3 l3"><img src="../res/perfil_pedro.jpg" alt="" class="responsive-img"></div>
+                        <div class="col s8 m7 l9">
                             <p>Nombre:&nbsp;Pedro Antonio Lima Adrián.</p>
                             <p>Edad:&nbsp;20&nbsp;años.</p>
-                            <p>Descripción:&nbsp;Estudiante de Ingeniería informática especializado en TIC. 
+                            <p>Descripción:&nbsp; Estudiante de Ingeniería informática especializado en TIC. 
                                                          Haciéndose famoso desde 1997. ps:&nbsp;"Famoso se nace no se hace".</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <br></br>
+            <br>
             <div class="row">
-                <div class="col s10 offset-s1 z-depth-2" id="main"> 
-                    <div class="col s4"><a href="www.ull.es"></a><img src="../res/ull_logo.png" alt="" class="responsive-img "></img></a></div>
-                    <div class="col s6 center">
-                        <br></br>
+                <div class="col s10 offset-s1 z-depth-2"> 
+                    <div class="col s4 m3 l3"><a href="https://www.ull.es/" ><img src="../res/ull_logo.png" alt="logo de la Universidad de La Laguna" class="responsive-img "></a></div>
+                    <div class="col s8 m7 l9 center">
+                        <br>
                         <p>Grupo de alumnos de La Universidad de La Laguna</p>
                         <p>Proyecto para la asignatura de Usabilidad y Accesibilidad</p>
                     </div>

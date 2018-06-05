@@ -88,7 +88,7 @@ else{
                 <div class="col s12 center">
                     <div class="col s4 offset-s4">
                       <img class="circle responsive-img" src="../../res/p.png" alt="foto de perfil">
-                      <h3>'.$NOMBRE.'</h3>
+                      <h1>'.$NOMBRE.'</h1>
                     </div> 
                     
                     <div class="row">

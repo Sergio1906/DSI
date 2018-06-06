@@ -33,11 +33,11 @@
                         </a>
 
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        	<li><a href="../index.html">Inicio</a></li>
-                            <li><a href="./log_in.html">Sign in</a></li>
-                            <li><a href="./sign_up.html">Sign up</a></li>
-                            <li><a href="./ayuda.html">Ayuda</a></li>
-                            <li><a href="./nosotros.html">Nosotros</a></li>
+                        	<li><a class="navlink" href="../index.html">Inicio</a></li>
+                            <li><a class="navlink" href="./log_in.html">Sign in</a></li>
+                            <li><a class="navlink" href="./sign_up.html">Sign up</a></li>
+                            <li><a class="navlink" href="./ayuda.html">Ayuda</a></li>
+                            <li><a class="navlink" href="./nosotros.html">Nosotros</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -57,7 +57,7 @@
 	
 				<div class="row">
 					<div class="col s9 offset-s1">
-						<h1>Bienvenido a la encuesta de satisfacción</h1>
+						<h1 tabindex="0">Bienvenido a la encuesta de satisfacción</h1>
 					</div>
 				</div>
 				
@@ -91,7 +91,7 @@
 				<div class="row">
 		            <div class="col s10 offset-s1 z-depth-2"> 
 						<div class="input-field col s12 m6 l6">
-							<span>¿Qué eventos sueles frecuentar?</span><br>
+							<span tabindex="0">¿Qué eventos sueles frecuentar?</span><br>
 							<p><label><input type="checkbox" /><span>Música</span></label></p>
 		  			        <p><label><input type="checkbox" /><span>Teatro</span></label></p>
 		   			        <p><label><input type="checkbox" /><span>Cine</span></label></p>
@@ -100,11 +100,11 @@
 					  	</div>
 					  		
 					  		<div class="input-field col s12 m6 l6">
-					  			<span>¿Con qué frecuencia sueles ir a eventos?:</span><br><br>
+					  			<span tabindex="0">¿Con qué frecuencia sueles ir a eventos?:</span><br><br>
 					                <fieldset><legend>Marque la opción que más se adapte</legend>
 					                <label><input class="with-gap" name="group1" id="vez1" value="off" onclick="cambiar_valor();" type="radio"/><span>1 o menos</span></label>
-								    <label><input class="with-gap" name="group1" id="vez2" value="off" onclick="cambiar_valor();" type="radio"/><span>De 2 a 4</span></label>
-								    <label><input class="with-gap" name="group1" id="vez3" value="off" onclick="cambiar_valor();" type="radio"/><span>Más de 4</span></label></fieldset>
+								    <label><input tabindex="0" class="with-gap" name="group1" id="vez2" value="off" onclick="cambiar_valor();" type="radio"/><span>De 2 a 4</span></label>
+								    <label><input  tabindex="0" class="with-gap" name="group1" id="vez3" value="off" onclick="cambiar_valor();" type="radio"/><span>Más de 4</span></label></fieldset>
 							</div>
 					  		
 							<div id="div_nota_id" class="input-field col s10 m4 l4 offset-s1">
@@ -117,7 +117,7 @@
 									<option value="2">Mala</option>
 									<option value="1">Terrible</option>
 								</select>
-								<label for="select_nota">NOTA</label>
+								<label  tabindex="0" for="select_nota">Puntúe la página</label>
 						  	</div>
                     </div>
                     <br>

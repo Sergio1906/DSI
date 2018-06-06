@@ -20,7 +20,7 @@ function verificar_nombre(){
     }
     else{
         $("#name_alert_icon").html("");
-        $("#error_div").html("");
+        $("#err_div").html("");
         return true;
     }
 }
@@ -33,11 +33,13 @@ $("#registrarse").click(e => {
     var test_email = new RegExp('^[A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z0-9][A-Za-z0-9]+');
     if(!test_email.test($("#SI_email").val())){
         $("#mail_alert_icon").html("<i class=\"material-icons prefix\">report_problem</i>Obligatorio");
+        $("#err_div").html("<p><em>El correo introducido no es válido</em></p>");
         return false;
     }
     else{
         $("#mail_alert_icon").html("");
         if($('#SI_password').val() == $('#SI_password2').val()){
+            $("#err_div").html("");
             const message_e = firebase.auth().createUserWithEmailAndPassword($('#SI_email').val(), $('#SI_password').val())
                   .then(function(){
                         firebase.auth().signInWithEmailAndPassword($('#SI_email').val(), $('#SI_password').val());
@@ -52,7 +54,7 @@ $("#registrarse").click(e => {
             return true;
         }
         else{
-            alert("Deben coincidir ambas contraseñas");
+            $("#err_div").html("<p><em>Deben coincidir ambas contraseñas</em></p>");
             return false;
         }
     }

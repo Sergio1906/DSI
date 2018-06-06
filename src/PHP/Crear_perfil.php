@@ -64,11 +64,11 @@ else{
                         </a>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="../../index.html">Inicio</a></li>
-                            <li><a href="../log_in.html">Sign in</a></li>
-                            <li><a href="../ayuda.html">Ayuda</a></li>
-                            <li><a href="../nosotros.html">Nosotros</a></li>
-                            <li><a href="../encuesta.html">Encuesta</a></li>
+                            <li><a class="navlink" href="../../index.html">Inicio</a></li>
+                            <li><a class="navlink" href="../log_in.html">Sign in</a></li>
+                            <li><a class="navlink" href="../ayuda.html">Ayuda</a></li>
+                            <li><a class="navlink" href="../nosotros.html">Nosotros</a></li>
+                            <li><a class="navlink" href="../encuesta.html">Encuesta</a></li>
 
                         </ul>
                     </div>
@@ -88,12 +88,12 @@ else{
                 <div class="col s12 center">
                     <div class="col s4 offset-s4">
                       <img class="circle responsive-img" src="../../res/p.png" alt="foto de perfil">
-                      <h1>'.$NOMBRE.'</h1>
+                      <h1 tabindex="0">'.$NOMBRE.'</h1>
                     </div> 
                     
                     <div class="row">
                         <div class="col s10 m4 l4 offset-s1 offset-m1 offset-l1">
-                            <label class="label_u">Eventos creados</label><br>';
+                            <label tabindex="0" class="label_u">Eventos creados</label><br>';
                             
                             while($aux = mysqli_fetch_array($Resultado2)) {
                             
@@ -107,9 +107,9 @@ else{
                         </div>
             
                         <div class="col s10 m4 l4 offset-s1 offset-m2 offset-l2">
-                              <label class="label_u">Datos personales</label>
-                              <p> '.$SEXO.'</p>
-                              <p> '.$EDAD.'</p>
+                              <label tabindex="0" class="label_u">Datos personales</label>
+                              <p tabindex="0"> Sexo: '.$SEXO.'</p>
+                              <p tabindex="0"> Edad: '.$EDAD.'</p>
                               
                         </div>
                     </div>

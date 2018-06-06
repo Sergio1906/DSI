@@ -16,6 +16,8 @@ $(document).ready(function(){
   $("#carta_video2").hide();
 
 });
+
+
   	$("#enviar_form").click(function(){
         $("#carta").show();
     });
@@ -43,6 +45,7 @@ $(document).ready(function(){
     $("#carta_video2").click(function(){
         $("#carta_video2").hide();
     });
+
 
             $('.div_desplegable').keyup('click', function(key_pressed) {
                 if(key_pressed.which == 13 || key_pressed.keyCode == 13){
@@ -102,6 +105,11 @@ $(document).ready(function(){
 $('span .carousel-item').click(function(){
     var new_url = "https://infoevent.000webhostapp.com/src/PHP/Crear_evento.php?nom=" + $(this).attr("src");
     window.location.replace(new_url);
+});
+
+
+$('#last_elem_sidenav').focusout(function() {
+    $('#mobile-nav').sidenav('close');
 });
 
 function buscar() {

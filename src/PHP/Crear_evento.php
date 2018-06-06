@@ -74,12 +74,12 @@ else{
                         </a>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="../../index.html">Inicio</a></li>
-                            <li><a href="../log_in.html">Sign in</a></li>
-                            <li><a href="../sign_up.html"> Sign up </a></li>
-                            <li><a href="../ayuda.html">Ayuda</a></li>
-                            <li><a href="../nosotros.html">Nosotros</a></li>
-                            <li><a href="../encuesta.html">Encuesta</a></li>
+                            <li><a class="navlink" href="../../index.html">Inicio</a></li>
+                            <li><a class="navlink" href="../log_in.html">Sign in</a></li>
+                            <li><a class="navlink" href="../sign_up.html"> Sign up </a></li>
+                            <li><a class="navlink" href="../ayuda.html">Ayuda</a></li>
+                            <li><a class="navlink" href="../nosotros.html">Nosotros</a></li>
+                            <li><a class="navlink" href="../encuesta.html">Encuesta</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -101,14 +101,14 @@ else{
                 <i class="medium material-icons">people</i> <a href="https://infoevent.000webhostapp.com/src/PHP/Crear_perfil.php?id='.$CREADOR.'"><p>'.$USER.'</p></a>
               </div>
               <div class="col s12 m2 l2 offset-m3 offset-l2 center-align">
-                <i class="medium material-icons">mail</i><p>'.$CORREO.'</p><br>
+                <i class="medium material-icons">mail</i><p tabindex="0">'.$CORREO.'</p><br>
               </div>
               
               
               <br><br><br><br><br><br>
-              <h3>Puntuación</h3>
+              <h3  tabindex="0">Puntuación</h3>
               <div class = "clasificacion">
-                ★★★★★★  <br> 5 ESTRELLAS 
+                <span tabindex="0">★★★★★★  <br> 5 ESTRELLAS </span>
               </div>
               <div>
               <p> Comentarios </p>
@@ -118,14 +118,14 @@ else{
 
 
             <div class="col s10 m7 l6 offset-s1 fondo ">
-              <h1 id="title_event"><strong>'.$NOMBRE.'</strong></h1>
+              <h1 tabindex="0" id="title_event"><strong>'.$NOMBRE.'</strong></h1>
               <img class="responsive-img z-depth-3" src="../../res/eventos/'.$FOTO.'" alt="foto del evento">
-              <div>
+              <div tabindex="0">
               <br>
               '.$DESCRIPCION.'
               </div>
               <br>
-              <h3 class="black-text">Enlaces de interés</h3>
+              <h3 tabindex="0" class="black-text">Enlaces de interés</h3>
               <div class="col s5 m6 l3">
                   <i class="medium material-icons">home</i>
                   <br>

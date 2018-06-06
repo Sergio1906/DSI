@@ -25,9 +25,15 @@ h3{
     font-family:Questrial;
 }
 
+
+
 ::placeholder {
     color: black;
     font-family:Questrial;
+}
+
+.navlink:visited{
+    color:#FFFF7A;
 }
 
 .input-field>label {

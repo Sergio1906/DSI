@@ -45,11 +45,11 @@
                         </a>
                         
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="../log_in.html">Sign in</a></li>
-                            <li><a href="../sign_up.html">Sign up</a></li>
-                            <li><a href="../ayuda.html">Ayuda</a></li>
-                            <li><a href="../nosotros.html">Nosotros</a></li>
-                            <li><a href="../encuesta.html">Encuesta</a></li>
+                            <li><a class="navlink" href="../log_in.html">Sign in</a></li>
+                            <li><a class="navlink" href="../sign_up.html">Sign up</a></li>
+                            <li><a class="navlink" href="../ayuda.html">Ayuda</a></li>
+                            <li><a class="navlink" href="../nosotros.html">Nosotros</a></li>
+                            <li><a class="navlink" href="../encuesta.html">Encuesta</a></li>
 
                         </ul>
                     </div>

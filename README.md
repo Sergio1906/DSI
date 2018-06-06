@@ -36,20 +36,20 @@
 ##### Index: añadir enlaces a las funcionalidades de log in y sing up
 
 ### Versión 1.0: 
-####Añadida las funcionalidades principales, carrusel de eventos boton de filtrar y navbar.
+#### Añadida las funcionalidades principales, carrusel de eventos boton de filtrar y navbar.
 
 ### Versión 1.1: 
-####Añadiendo wai-aria y mejorando la experiencia de usuario mejorando la navegación por teclado
+#### Añadiendo wai-aria y mejorando la experiencia de usuario mejorando la navegación por teclado
 
 ### Versión 1.2: 
-####Conectividad con base de datos y consultas completadas con éxito.
+#### Conectividad con base de datos y consultas completadas con éxito.
 
 ### Versión 2.0: 
-####Reediseño de las formas y colores del index para la obtención de un buen contraste y cumplir con los estándares de accesibilidad.
+#### Reediseño de las formas y colores del index para la obtención de un buen contraste y cumplir con los estándares de accesibilidad.
 
 ### Versión 2.1: 
-####Arreglando etiquetado para que chromevox funcione correctamente.
+#### Arreglando etiquetado para que chromevox funcione correctamente.
 
 ### Versión 2.2: 
-####Correción de errores y versión final del proyecto. 
+#### Correción de errores y versión final del proyecto. 
 
